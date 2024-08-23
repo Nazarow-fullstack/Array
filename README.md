@@ -113,3 +113,13 @@ console.log(reversedFruits); // Outputs: ["Cherry", "Banana", "Apple"]
 console.log(fruits);         // Outputs: ["Apple", "Banana", "Cherry"]
 ```
 
+
+
+## Callback method
+![](https://miro.medium.com/v2/resize:fit:809/1*vBp7f-zK1UeO18OHyYt11w.jpeg)
+
+### What is callback?
++ A callback in JavaScript is a function that is passed as an argument to another function and is executed after the completion of certain operations. It often helps create asynchronous code and handle the results of functions at a specific point in time
+
+
+
