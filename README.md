@@ -121,5 +121,147 @@ console.log(fruits);         // Outputs: ["Apple", "Banana", "Cherry"]
 ### What is callback?
 + A callback in JavaScript is a function that is passed as an argument to another function and is executed after the completion of certain operations. It often helps create asynchronous code and handle the results of functions at a specific point in time
 
+### map()
++ In JavaScript, map() is a method of the Array object. It creates a new array by calling a function on every element of the original array and storing the results in a new array.
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const doubledNumbers = numbers.map(function(number) {
+  return number * 2;
+});
+console.log(doubledNumbers); // [2, 4, 6, 8, 10]
+```
 
 
+### forEach()
++ Sure! The forEach() method in JavaScript is used to execute a provided function once for each array element. Here’s a simple example:
+
+```javascript
+const fruits = ['apple', 'banana', 'cherry'];
+
+fruits.forEach(function(fruit) {
+  console.log(fruit);
+});
+
+// Output:
+// apple
+// banana
+// cherry
+```
+
+
+
+### filter()
++ The filter() method in JavaScript is used to create a new array with all elements that pass a test implemented by a provided function. Here’s a simple example:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const evenNumbers = numbers.filter(function(number) {
+  return number % 2 === 0;
+});
+console.log(evenNumbers); // [2, 4, 6]
+```
+
+
+
+### reduce()
++ The reduce() method in JavaScript is used to execute a reducer function on each element of the array, resulting in a single output value. Here’s a simple example:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = numbers.reduce(function(accumulator, currentValue) {
+  return accumulator + currentValue;
+}, 0);
+
+console.log(sum); // 15
+```
+
+
+
+### find()
++ The find() method in JavaScript is used to search an array and return the value of the first element that satisfies a provided testing function. Here’s a simple example:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+
+const firstNumberGreaterThanThree = numbers.find(function(number) {
+  return number > 3;
+});
+
+console.log(firstNumberGreaterThanThree); // 4
+```
+
+
+
+
+### toSorted()
++ The toSorted() method in JavaScript is a new addition that creates a sorted copy of an array without modifying the original array. Here’s a simple example:
+
+```javascript
+const fruits = ['banana', 'apple', 'mango', 'kiwi'];
+
+const sortedFruits = fruits.toSorted();
+
+console.log(sortedFruits); // ['apple', 'banana', 'kiwi', 'mango']
+console.log(fruits); // ['banana', 'apple', 'mango', 'kiwi']
+```
+
+
+
+## What is mechanism injavascript?
++ Unlike most programming languages, JavaScript language has no concept of input or output. It is designed to run as a scripting language in a host environment, and it is up to the host environment to provide mechanisms for communicating with the outside world.
+
+### Destructuring
++ Unlike most programming languages, JavaScript language has no concept of input or output. It is designed to run as a scripting language in a host environment, and it is up to the host environment to provide mechanisms for communicating with the outside world.
+
+```javascript
+let a, b, rest;
+[a, b] = [10, 20];
+
+console.log(a);
+// Expected output: 10
+
+console.log(b);
+// Expected output: 20
+
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(rest);
+// Expected output: Array [30, 40, 50]
+```
+
+
+### Spread
++ The spread (…) syntax allows an iterable, such as an array or string, to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected. In an object literal, the spread syntax enumerates the properties of an object and adds the key-value pairs to the object being created.
+
+```javascript
+function sum(x, y, z) {
+  return x + y + z;
+}
+
+const numbers = [1, 2, 3];
+
+console.log(sum(...numbers));
+// Expected output: 6
+```
+
+
+
+### Rest
++ The rest parameter syntax allows a function to accept an indefinite number of arguments as an array, providing a way to represent variadic functions in JavaScript. A function definition can only have one rest parameter, and the rest parameter must be the last parameter in the function definition.
+
+```javascript
+function myFun(a, b, ...manyMoreArgs) {
+  console.log("a", a);
+  console.log("b", b);
+  console.log("manyMoreArgs", manyMoreArgs);
+}
+
+myFun("one", "two", "three", "four", "five", "six");
+
+// a, "one"
+// b, "two"
+// manyMoreArgs, ["three", "four", "five", "six"] — an array
+```
